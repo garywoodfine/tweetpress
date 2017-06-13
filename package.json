@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/garywoodfine/tweetpress/issues"
   },
-  "homepage": "https://github.com/garywoodfine/tweetpress#readme"
+  "homepage": "https://github.com/garywoodfine/tweetpress#readme",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  }
 }
