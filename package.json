@@ -1,0 +1,31 @@
+{
+  "name": "tweetpress",
+  "version": "1.0.0",
+  "description": "A twitter wordpress automation bot developed using AWS lambda and the serverless framework",
+  "main": "handler.js",
+  "dependencies": {
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garywoodfine/tweetpress.git"
+  },
+  "keywords": [
+    "twitter",
+    "wordpress",
+    "aws",
+    "lambda",
+    "serverless",
+    "framework"
+  ],
+  "author": "Gary Woodfine",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/garywoodfine/tweetpress/issues"
+  },
+  "homepage": "https://github.com/garywoodfine/tweetpress#readme"
+}
