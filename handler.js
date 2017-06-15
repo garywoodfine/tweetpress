@@ -1,13 +1,17 @@
 'use strict';
+const twitCtrl = require('./twitter_controller');
 
-module.exports.hello = (event, context, callback) => {
-  const response = {
-    statusCode: 200,
+module.exports.favourite = (event, context, callback) => {
+
+const ctrl = new twitCtrl();
+
+ const response = {
+   statusCode: 200,
     body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
+      message: ctrl.favourite('#nodejs', callback)
+     
     }),
-  };
+};
 
   callback(null, response);
 
