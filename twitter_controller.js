@@ -8,20 +8,14 @@ var T = new Twitter(config);
 module.exports = class TwitterController {
     constructor() { }
 
-    favourite(hashtag, callback) {
+    favourite(params, callback) {
 
-        // Set up your search parameters
-        var params = {
-            q: hashtag,
-            count: 10,
-            result_type: 'recent',
-            lang: 'en'
-        }
-
-        // Initiate your search using the above paramaters
+        
+       // Initiate search using passed paramaters
         T.get('search/tweets', params, function (err, data, response) {
             // If there is no error, proceed
             if (!err) {
+
                 // Loop through the returned tweets
                 for (let i = 0; i < data.statuses.length; i++) {
                     // Get the tweet Id from the returned data
@@ -40,14 +34,9 @@ module.exports = class TwitterController {
             }
         })
 
-
-
-
-
-
         const response = {
             statusCode: 200,
-            body: 'Tweets favourited'
+            body:  'Tweets favourited'
         };
         callback(null, response);
     }
