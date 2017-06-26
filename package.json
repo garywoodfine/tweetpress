@@ -1,11 +1,10 @@
 {
   "name": "tweetpress",
   "version": "1.0.0",
-  "description": "A twitter wordpress automation bot developed using AWS lambda and the serverless framework",
+  "description": "A twitter automation bot developed using AWS lambda and the serverless framework",
   "main": "handler.js",
   "dependencies": {
-    "twitter": "^1.7.1",
-    "wpapi": "^1.1.1"
+    "twitter": "^1.7.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -17,7 +16,6 @@
   },
   "keywords": [
     "twitter",
-    "wordpress",
     "aws",
     "lambda",
     "serverless",
