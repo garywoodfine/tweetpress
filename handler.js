@@ -5,13 +5,14 @@ module.exports.favourite = (event, context, callback) => {
 
   const ctrl = new twitCtrl();
 
-  const data = JSON.parse(event.body);
+  const requestBody = JSON.parse(event.body);
+  const hashTag = requestBody.hashtag;
   // Not sure this is a good idea to have the Twitter specific params created here.
   // My extract this out to some  middleware to create the parameters.
   // TODO:  Develop middle ware to create Twiiter and WPAPI parameters to pass 
   //         Also arguments will need to populated from request object
   var params = {
-    q: data.hashtag ,
+    q: hashTag ,
     count: 10,
     result_type: 'recent',
     lang: 'en'
