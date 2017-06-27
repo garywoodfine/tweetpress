@@ -1,6 +1,6 @@
 # TweetPress 
 
-Code example for [Build a Twitter WordPress AWS lambda serverless framework automation Bot with node.js]( https://garywoodfine.com/twitter-wordpress-aws-lambda-bot/) 
+Code example for [Build a Twitter bot with AWS lambda serverless framework and node.js]( https://garywoodfine.com/twitter-aws-lambda-bot/) 
 
 ## Configuration
 
