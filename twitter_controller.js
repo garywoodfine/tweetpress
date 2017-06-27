@@ -10,8 +10,8 @@ module.exports = class TwitterController {
 
     favourite(params, callback) {
 
-        
-       // Initiate search using passed paramaters
+
+        // Initiate search using passed paramaters
         T.get('search/tweets', params, function (err, data, response) {
             // If there is no error, proceed
             if (!err) {
@@ -36,7 +36,10 @@ module.exports = class TwitterController {
 
         const response = {
             statusCode: 200,
-            body:  'Tweets favourited'
+            body: JSON.stringify({
+                message: 'Tweets Favourited',
+                data: params // eslint-disable-line
+            })
         };
         callback(null, response);
     }

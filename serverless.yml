@@ -11,6 +11,6 @@ functions:
     events:
      - http:
          path: /favourite
-         method: get
+         method: post
          cors: false
       
