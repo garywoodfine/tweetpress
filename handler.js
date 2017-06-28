@@ -6,13 +6,13 @@ module.exports.favourite = (event, context, callback) => {
   const ctrl = new twitCtrl();
 
   const requestBody = JSON.parse(event.body);
-  const hashTag = requestBody.hashtag;
+  const tag = requestBody.hashtag;
+  const count = requestBody.count;
+
  
   var params = {
-    q: hashTag,
-    count: 10,
-    result_type: 'recent',
-    lang: 'en'
+    tag:tag,
+    count: count
   }
   
   const response = {
@@ -22,10 +22,6 @@ module.exports.favourite = (event, context, callback) => {
 
     }),
   };
-  
-
   callback(null, response);
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
