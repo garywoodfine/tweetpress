@@ -13,4 +13,10 @@ functions:
          path: /favourite
          method: post
          cors: false
-      
+  follow:
+    handler: handler.follow
+    events:
+      - http:
+          path: /follow
+          method: post
+          cors: false   

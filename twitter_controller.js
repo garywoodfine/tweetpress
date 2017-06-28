@@ -8,6 +8,7 @@ var T = new Twitter(config);
 module.exports = class TwitterController {
     constructor() { }
 
+    // Favourite tweets  with certain hashtags
     favourite(args, callback) {
 
         var params = {
@@ -44,5 +45,50 @@ module.exports = class TwitterController {
         };
         callback(null, response);
     }
+
+    //follow people tweeting with a hashtag
+    follow(args, callback) {
+
+        var params = {
+            q: args.tag,
+            count: args.count,
+            result_type: 'popular',
+            lang: 'en'
+        }
+         var followed = {
+               user: []
+           };
+        T.get('search/tweets', params, function (err, data, response) {
+          
+            if (!err) {
+               
+                for (let i = 0; i < data.statuses.length; i++) {
+                    
+                    let screen_name = data.statuses[i].user.screen_name;
+                   
+                    T.post('friendships/create', { screen_name }, function (err, response) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            followed.user.push({screen_name});
+                          
+                        }
+                    });
+                }
+            } else {
+                console.log(err);
+            }
+        })
+          const response = {
+            statusCode: 200,
+            body: JSON.stringify({
+                message: followed,
+                data: args // eslint-disable-line
+            })
+        };
+        callback(null, response);
+    }
+
+      
 
 }
