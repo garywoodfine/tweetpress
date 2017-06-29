@@ -55,9 +55,8 @@ module.exports = class TwitterController {
             result_type: 'popular',
             lang: 'en'
         }
-         var followed = {
-               user: []
-           };
+         var followed = {};
+         var user = [];
         T.get('search/tweets', params, function (err, data, response) {
           
             if (!err) {
@@ -70,7 +69,7 @@ module.exports = class TwitterController {
                         if (err) {
                             console.log(err);
                         } else {
-                            followed.user.push({screen_name});
+                            user.push({ "name": screen_name });
                           
                         }
                     });
@@ -79,6 +78,8 @@ module.exports = class TwitterController {
                 console.log(err);
             }
         })
+
+        followed.user = user;
           const response = {
             statusCode: 200,
             body: JSON.stringify({
